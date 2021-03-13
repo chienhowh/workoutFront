@@ -25,9 +25,16 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "src/theme.less",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "workoutFront"
+    }
+  },
+  "defaultProject": "workoutFront",
+  "cli": {
+    "analytics": "a261edb8-6bc1-472e-935b-49f492e0574b"
+  }
 }

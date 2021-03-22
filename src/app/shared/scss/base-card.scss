@@ -1,0 +1,8 @@
+.base-card {
+  padding: 8px 16px;
+  background-color: bisque;
+  margin-bottom: 8px;
+  &[cardStyle="rounder"] {
+    border-radius: 6px;
+  }
+}

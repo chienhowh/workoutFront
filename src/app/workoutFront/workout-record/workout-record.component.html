@@ -1,0 +1,19 @@
+<div class="display-zone">
+
+  <div class="base-card" cardStyle="rounder" *ngFor="let info of displayList; let infoIndex = index">
+    <div class="d-flex">
+      <div class="icon-box">
+        臥推
+      </div>
+      <div class="info-box">
+        <div>重量:{{ info.weight }}</div>
+        <div>次數: {{ info.reps }}</div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <app-create-btn class="click-btn" (click)="createRecordModal()"></app-create-btn>
+
+</div>

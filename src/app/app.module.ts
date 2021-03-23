@@ -28,7 +28,6 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    WorkoutRecordModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_TW }],
   bootstrap: [AppComponent]

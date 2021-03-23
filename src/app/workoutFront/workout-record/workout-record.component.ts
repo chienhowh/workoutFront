@@ -1,8 +1,8 @@
 import { RecordSettingModalComponent } from './record-setting-modal/record-setting-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
-import { workoutInfo } from './classes/workout-info.class';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +12,13 @@ import { map } from 'rxjs/operators';
 })
 
 export class WorkoutRecordComponent implements OnInit {
-  displayList: workoutInfo[] = [];
+  displayList = [
+    { date: '2021/03/21 16:00', title: '腿日' },
+    { date: '2021/03/21 16:00', title: '今天練胸' }
+  ];
   constructor(
-    private modal: NzModalService
+    private modal: NzModalService,
+    private router: Router,
   ) {
 
   }
@@ -32,8 +36,14 @@ export class WorkoutRecordComponent implements OnInit {
       nzOnOk: (res) => console.log(res)
     });
     modal.afterClose.pipe(map(res => res.data)).subscribe(res => {
-      this.displayList.push(res)
-      console.log(this.displayList)
-    })
+      this.displayList.push(res);
+      console.log(this.displayList);
+    });
+  }
+  /**
+   * 新增訓練內容
+   */
+  onCheckDetail() {
+    this.router.navigate(['record/movement']);
   }
 }

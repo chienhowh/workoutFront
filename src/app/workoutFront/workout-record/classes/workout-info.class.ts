@@ -1,5 +1,5 @@
-export class workoutInfo{
-  weight:number;
-  reps:number;
-  volume:number;
+export class movementInfo {
+  weight: number;
+  reps: number;
+  movementName: string;
 }

@@ -1,19 +1,25 @@
-<div class="display-zone">
 
-  <div class="base-card" cardStyle="rounder" *ngFor="let info of displayList; let infoIndex = index">
-    <div class="d-flex">
-      <div class="icon-box">
-        臥推
-      </div>
-      <div class="info-box">
-        <div>重量:{{ info.weight }}</div>
-        <div>次數: {{ info.reps }}</div>
-      </div>
-    </div>
+  <nz-collapse>
+    <nz-collapse-panel
+      *ngFor="let record of displayList"
+      [nzHeader]="record.title + record.date"
+      [nzExtra]="extraTpl"
+    >
+      <p style="margin: 0">
+        A dog is a type of domesticated animal. Known for its loyalty and
+        faithfulness, it can be found as a welcome guest in many households
+        across the world.
+      </p>
+    </nz-collapse-panel>
+  </nz-collapse>
 
+  <app-create-btn
+    class="click-btn"
+    (click)="createRecordModal()"
+  ></app-create-btn>
 
-  </div>
-
-  <app-create-btn class="click-btn" (click)="createRecordModal()"></app-create-btn>
-
-</div>
+<ng-template #extraTpl>
+  <!-- You can use stopPropagation if you don't want the panel to toggle -->
+  <button nz-button (click)="onCheckDetail()">編輯</button>
+  <!-- <i nz-icon nzType="setting" (click)="$event.stopPropagation()"></i> -->
+</ng-template>

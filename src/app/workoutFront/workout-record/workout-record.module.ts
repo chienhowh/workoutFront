@@ -5,12 +5,18 @@ import { WorkoutRecordComponent } from './workout-record.component';
 import { WorkoutRecordRoutingModule } from './workout-record-routing.module';
 import { RecordSettingModalComponent } from './record-setting-modal/record-setting-modal.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MovementRecordComponent } from './movement-record/movement-record.component';
+import { MovementRecordSettingModalComponent } from './movement-record-setting-modal/movement-record-setting-modal.component';
+import { MovementTypeComponent } from './movement-type/movement-type.component';
 
 
 @NgModule({
   declarations: [
     WorkoutRecordComponent,
-    RecordSettingModalComponent
+    RecordSettingModalComponent,
+    MovementRecordComponent,
+    MovementRecordSettingModalComponent,
+    MovementTypeComponent
   ],
   imports: [
     CommonModule,

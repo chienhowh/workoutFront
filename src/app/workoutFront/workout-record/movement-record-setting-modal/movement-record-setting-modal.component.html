@@ -1,14 +1,14 @@
 <form nz-form [nzLayout]="'horizontal'" [formGroup]="recordForm">
   <nz-form-item>
-    <nz-form-label> 日期: </nz-form-label>
+    <nz-form-label> 重量: </nz-form-label>
     <nz-form-control>
-      <nz-date-picker formControlName="date"></nz-date-picker>
+      <nz-input-number [nzStep]="2.5" [formControlName]="'weight'"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label>名稱:</nz-form-label>
+    <nz-form-label>次數:</nz-form-label>
     <nz-form-control>
-      <input nz-input placeholder="Basic usage" formControlName="title" />
+      <nz-input-number [nzStep]="1"[formControlName]="'reps'"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
 </form>

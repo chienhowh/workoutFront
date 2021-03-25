@@ -1,3 +1,4 @@
+import { MovementTypeSettingModalComponent } from './movement-type-setting-modal/movement-type-setting-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,8 @@ import { MovementTypeComponent } from './movement-type/movement-type.component';
     RecordSettingModalComponent,
     MovementRecordComponent,
     MovementRecordSettingModalComponent,
-    MovementTypeComponent
+    MovementTypeComponent,
+    MovementTypeSettingModalComponent
   ],
   imports: [
     CommonModule,

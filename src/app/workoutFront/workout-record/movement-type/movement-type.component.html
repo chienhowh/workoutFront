@@ -1,1 +1,9 @@
-<app-create-btn (click)="onCreateTypeModal()"></app-create-btn>
+<div *ngFor="let movement of movementList">
+  <app-movement-record [movement]="movement"></app-movement-record>
+</div>
+<app-create-btn (click)="createMovementPanel()"></app-create-btn>
+<ng-template #extraTpl>
+  <!-- You can use stopPropagation if you don't want the panel to toggle -->
+  <button nz-button (click)="onCheckDetail()">編輯</button>
+  <!-- <i nz-icon nzType="setting" (click)="$event.stopPropagation()"></i> -->
+</ng-template>

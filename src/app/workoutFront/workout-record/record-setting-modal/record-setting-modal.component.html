@@ -1,33 +1,40 @@
-<form nz-form [nzLayout]="'horizontal'" [formGroup]="recordForm">
-  <nz-form-item>
-    <nz-form-label> 日期: </nz-form-label>
-    <nz-form-control>
-      <nz-date-picker formControlName="date"></nz-date-picker>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
-    <nz-form-label>名稱:</nz-form-label>
-    <nz-form-control>
-      <input nz-input placeholder="Basic usage" formControlName="title" />
-    </nz-form-control>
-  </nz-form-item>
-</form>
-<div class="text-center" style="margin-top: 40px">
-  <button
-    nz-button
-    nzType="primary"
-    nzGhost
-    class="btn-140 btn-default mr-5"
-    (click)="onModalCancel()"
-  >
-   取消
-  </button>
-  <button
-    nz-button
-    nzType="primary"
-    class="btn-140"
-    (click)="onModalConfirm()"
-  >
-  新增
-  </button>
+<div class="modal-card">
+  <div class="title">建立你的訓練日誌</div>
+  <div class="body">
+    <form nz-form [nzLayout]="'horizontal'" [formGroup]="recordForm">
+      <nz-form-item>
+        <nz-form-label> 日期: </nz-form-label>
+        <nz-form-control>
+          <nz-date-picker formControlName="date"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>名稱:</nz-form-label>
+        <nz-form-control>
+          <input nz-input placeholder="Basic usage" formControlName="title" />
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+
+  <div class="btn-box">
+    <button
+      nz-button
+      nzType="primary"
+      nzGhost
+      class="btn-140 btn-default mr-5"
+      (click)="onModalCancel()"
+    >
+     取消
+    </button>
+    <button
+      nz-button
+      nzType="primary"
+      class="btn-140"
+      (click)="onModalConfirm()"
+    >
+    新增
+    </button>
+  </div>
 </div>
+

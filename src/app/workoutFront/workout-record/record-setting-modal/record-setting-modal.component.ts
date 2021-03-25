@@ -24,14 +24,14 @@ export class RecordSettingModalComponent implements OnInit {
     this.recordForm = this.fb.group({
       date: ['', Validators.required],
       title: ['', Validators.required],
-    })
+    });
   }
   onModalConfirm(): void {
-    if (this.recordForm.invalid) { return }
+    if (this.recordForm.invalid) { return; }
     this.modalRef.close({ data: this.recordForm.value });
   }
 
   onModalCancel() {
-    this.modalRef.close()
+    this.modalRef.close();
   }
 }

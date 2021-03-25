@@ -1,20 +1,31 @@
-<div
-  class="base-card"
-  cardStyle="rounder"
-  *ngFor="let info of displayList; let infoIndex = index"
->
-  <div class="d-flex">
-    <div class="icon-box">
-      {{ info.movementName }}
-    </div>
-    <div class="info-box">
-      <div>重量:{{ info.weight }}</div>
-      <div>次數:{{ info.reps }}</div>
-    </div>
-  </div>
-</div>
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="movement.movement" [nzExtra]="extraTpl">
+    <!-- 運動細節 Start -->
+    <div
+      class="base-card"
+      cardStyle="rounder"
+      *ngFor="let info of movementInfoList; let infoIndex = index"
+    >
+      <div class="row">
 
-<app-create-btn
-  class="click-btn"
-  (click)="createMovementModal()"
-></app-create-btn>
+          <div class="col-6">重量:{{ info.weight }}</div>
+          <div class="col-6">次數:{{ info.reps }}</div>
+
+      </div>
+    </div>
+    <div>
+      <i
+        nz-icon
+        nzType="plus-circle"
+        nzTheme="fill"
+        (click)="createSameMovementInfo()"
+      ></i>
+    </div>
+  </nz-collapse-panel>
+</nz-collapse>
+
+<ng-template #extraTpl>
+  <!-- You can use stopPropagation if you don't want the panel to toggle -->
+  <button nz-button (click)="createMovementInfo()">設定重量</button>
+  <!-- <i nz-icon nzType="setting" (click)="$event.stopPropagation()"></i> -->
+</ng-template>

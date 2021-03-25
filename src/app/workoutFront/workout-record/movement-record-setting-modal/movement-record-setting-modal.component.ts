@@ -30,6 +30,6 @@ export class MovementRecordSettingModalComponent implements OnInit {
   }
 
   onModalCancel(){
-    this.modalRef.close()
+    this.modalRef.close();
   }
 }

@@ -26,6 +26,9 @@ export const formkeys = {
   /**
    * 次數
    */
-  reps: 'reps'
-
+  reps: 'reps',
+  /**
+   * 組數
+   */
+  sets: 'sets'
 }

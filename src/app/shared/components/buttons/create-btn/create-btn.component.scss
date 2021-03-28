@@ -1,6 +1,7 @@
+@import '../../../scss/theme-variables.scss';
 [nz-icon] {
   font-size: 48px;
-  color: red;
+  color: $color-primary;
   position: fixed;
   right: 16px;
   bottom: 24px;

@@ -1,4 +1,4 @@
-<nz-collapse>
+<nz-collapse class="m-2">
   <nz-collapse-panel [nzHeader]="movement.movement" [nzExtra]="extraTpl">
     <!-- 運動細節 Start -->
     <div
@@ -26,6 +26,6 @@
 
 <ng-template #extraTpl>
   <!-- You can use stopPropagation if you don't want the panel to toggle -->
-  <button nz-button (click)="createMovementInfo()">設定重量</button>
+  <button nz-button [nzType]="'primary'" (click)="createMovementInfo();$event.stopPropagation()">設定重量</button>
   <!-- <i nz-icon nzType="setting" (click)="$event.stopPropagation()"></i> -->
 </ng-template>

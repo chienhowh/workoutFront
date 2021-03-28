@@ -15,12 +15,16 @@ import { Router } from '@angular/router';
 
 export class WorkoutRecordComponent implements OnInit {
   displayList = [
-    { [formkeys.date]: '2021/03/21 16:00', [formkeys.title]: '今天練胸日', detail: [{ name: '槓鈴臥推', volume: '2000kg' },
-    { name: '啞鈴臥推', volume: '2000kg' },
-    { name: '飛鳥夾胸', volume: '2000kg' }] },
-    { date: '2021/03/21 16:00', title: '想練腿', detail: [{ name: '槓鈴深蹲', volume: '2000kg' },
-    { name: '箭步蹲', volume: '2000kg' },
-    { name: '硬舉Ｆ', volume: '2000kg' }] }
+    {
+      [formkeys.date]: '2021/03/21 16:00', [formkeys.title]: '今天練胸日', detail: [{ name: '槓鈴臥推', [formkeys.sets]: 5, volume: '2000' },
+      { name: '啞鈴臥推', [formkeys.sets]: 5, volume: '2000' },
+      { name: '飛鳥夾胸', [formkeys.sets]: 5, volume: '2000' }]
+    },
+    {
+      date: '2021/03/21 16:00', title: '想練腿', detail: [{ name: '槓鈴深蹲', [formkeys.sets]: 5, volume: '2000' },
+      { name: '箭步蹲', [formkeys.sets]: 5, volume: '200' },
+      { name: '硬舉Ｆ', [formkeys.sets]: 5, volume: '2000' }]
+    }
 
   ];
   constructor(

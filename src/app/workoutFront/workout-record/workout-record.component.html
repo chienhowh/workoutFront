@@ -1,21 +1,25 @@
-<nz-collapse>
+<nz-collapse class="m-2">
   <nz-collapse-panel
     *ngFor="let record of displayList"
     [nzHeader]="title"
     [nzExtra]="extraTpl"
   >
     <!-- Header start -->
-    <ng-template #title>{{
-      (record.date | date: "yyyy/MM/dd HH:mm") + record.title
-    }}</ng-template>
-
-  <!-- Header end -->
-  <!-- Content start -->
-  <div *ngFor="let detail of record.detail">
-    <div>{{detail.name}}:{{detail.volume}}</div>
-  </div>
-  <!-- Content end -->
-</nz-collapse-panel>
+    <ng-template #title>
+      <span class="mr-2">{{ record.date | date: "yyyy/MM/dd HH:mm" }}</span
+      >{{ record.title }}</ng-template
+    >
+    <!-- Header end -->
+    <!-- Content start -->
+    <div *ngFor="let detail of record.detail">
+      <div>{{ detail.name }}:</div>
+      <div class="row">
+        <div class="col">組數:{{ detail.sets }}組</div>
+        <div class="col">訓練量:{{ detail.volume }}kg</div>
+      </div>
+    </div>
+    <!-- Content end -->
+  </nz-collapse-panel>
 </nz-collapse>
 
 <app-create-btn
@@ -24,7 +28,11 @@
 ></app-create-btn>
 
 <ng-template #extraTpl>
-  <!-- You can use stopPropagation if you don't want the panel to toggle -->
-  <button nz-button (click)="onCheckDetail()">編輯</button>
-  <!-- <i nz-icon nzType="setting" (click)="$event.stopPropagation()"></i> -->
+  <button
+    nz-button
+    [nzType]="'primary'"
+    (click)="onCheckDetail(); $event.stopPropagation()"
+  >
+    編輯
+  </button>
 </ng-template>

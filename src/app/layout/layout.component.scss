@@ -1,3 +1,9 @@
-nz-content{
+@import "../shared/scss/theme-variables.scss";
+
+nz-header {
+  background-color: $color-primary;
+}
+
+nz-content {
   background-color: #fff;
 }

@@ -8,7 +8,8 @@ const routes: Routes = [
     path: Routing.Record,
     loadChildren: () => import('./workoutFront/workout-record/workout-record.module').then(m => m.WorkoutRecordModule)
   },
-  { path: '', redirectTo: '/record', pathMatch: 'full' }
+  { path: 'aesthtic', loadChildren: () => import('./aesthtic/aesthtic.module').then(m => m.AesthticModule) },
+  { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,13 +1,16 @@
 <nz-collapse class="m-2">
   <nz-collapse-panel
     *ngFor="let record of displayList"
-    [nzHeader]="title"
+    [nzHeader]="header"
     [nzExtra]="extraTpl"
   >
     <!-- Header start -->
-    <ng-template #title>
-      <span class="mr-2">{{ record.date | date: "yyyy/MM/dd HH:mm" }}</span
-      >{{ record.title }}</ng-template
+    <ng-template #header>
+      <div class="header">
+        <span class="mr-2">{{ record.date | date: "yyyy/MM/dd HH:mm" }}</span
+          >{{ record.title }}
+      </div>
+      </ng-template
     >
     <!-- Header end -->
     <!-- Content start -->

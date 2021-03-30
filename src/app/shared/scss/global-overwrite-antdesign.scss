@@ -1,5 +1,5 @@
-
-
-// .ant-collapse-arrow{
-//   top: 0;
-// }
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+padding: 0px;
+top: 50%;
+transform: translateY(-50%);
+}

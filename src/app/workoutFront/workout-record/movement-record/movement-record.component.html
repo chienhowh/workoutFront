@@ -1,5 +1,9 @@
 <nz-collapse class="m-2">
-  <nz-collapse-panel [nzHeader]="movement.movement" [nzExtra]="extraTpl">
+  <nz-collapse-panel [nzHeader]="header" [nzExtra]="extraTpl">
+    <!-- Header -->
+    <ng-template #header>
+      <div class="header">{{movement.movement}}</div>
+    </ng-template>
     <!-- 運動細節 Start -->
     <div
       class="base-card"
@@ -7,7 +11,6 @@
       *ngFor="let info of movementInfoList; let infoIndex = index"
     >
       <div class="row">
-
           <div class="col-6">重量:{{ info.weight }}</div>
           <div class="col-6">次數:{{ info.reps }}</div>
 

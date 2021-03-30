@@ -10,5 +10,9 @@ Movement: 'movement',
 /**
  * 動作紀錄
  */
-MovementDetail: 'detail'
+MovementDetail: 'detail',
+/**
+ * 體態紀錄
+ */
+Aesthtic: 'aesthtic'
 }

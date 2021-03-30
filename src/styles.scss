@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../src/app/shared/scss/global-overwrite-antdesign.scss";
+
+// 手機畫面寬度
 .display-zone {
   max-width: 575px;
   margin: 0 auto;
+}
+
+/* Panel start */
+// header 能夠垂直置中
+.ant-collapse-header > .header {
+    display: inline-block;
+    line-height: 32px;
 }

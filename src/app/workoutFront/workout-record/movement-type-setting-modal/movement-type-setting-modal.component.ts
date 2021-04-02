@@ -1,4 +1,5 @@
-import { formkeys } from './../../const/formkeys.const';
+import { GetActionService } from './../services/get-action.service';
+import { FORMKEYS } from './../../const/FORMKEYS.const';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
@@ -9,7 +10,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
   styleUrls: ['./movement-type-setting-modal.component.scss']
 })
 export class MovementTypeSettingModalComponent implements OnInit {
-  formkeys = formkeys;
+  FORMKEYS = FORMKEYS;
   movementForm: FormGroup;
   selectedPart = '胸';
   selectedMovement = '啞鈴臥推';
@@ -20,24 +21,26 @@ export class MovementTypeSettingModalComponent implements OnInit {
   };
   constructor(
     private modalRef: NzModalRef,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private getActionService: GetActionService
   ) { }
 
   ngOnInit(): void {
-    this.initForm()
+    this.initForm();
+    this.getActionService.getActions();
   }
 
   private initForm() {
     this.movementForm = this.fb.group({
-      [formkeys.part]: ['', Validators.required],
-      [formkeys.movement]: ['', Validators.required]
+      [FORMKEYS.part]: ['', Validators.required],
+      [FORMKEYS.movement]: ['', Validators.required]
     });
   }
 
 
   partChange(value: string): void {
     this.selectedPart = value;
-    const movement = this.movementForm.get(formkeys.movement);
+    const movement = this.movementForm.get(FORMKEYS.movement);
     movement.patchValue(this.movementData[value][0]);
   }
   onModalConfirm(): void {

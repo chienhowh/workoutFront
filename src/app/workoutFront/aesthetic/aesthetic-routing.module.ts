@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AesthticComponent } from './aesthtic.component';
+import { AestheticComponent } from './aesthetic.component';
 
-const routes: Routes = [{ path: '', component: AesthticComponent }];
+const routes: Routes = [{ path: '', component: AestheticComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AesthticRoutingModule { }
+export class AestheticRoutingModule { }

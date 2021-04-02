@@ -1,18 +1,18 @@
-export const Routing = {
+export const ROUTING = {
 /**
  * 健身日誌
  */
-Record : 'record',
+RECORD : 'record',
 /**
  * 動作設定
  */
-Movement: 'movement',
+MOVEMENT: 'movement',
 /**
  * 動作紀錄
  */
-MovementDetail: 'detail',
+MOVEMENT_DETAIL: 'detail',
 /**
  * 體態紀錄
  */
-Aesthtic: 'aesthtic'
+AESTHETIC: 'aesthetic'
 }

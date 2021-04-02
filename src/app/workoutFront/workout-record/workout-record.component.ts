@@ -1,5 +1,5 @@
-import { formkeys } from './../const/formkeys.const';
-import { Routing } from './../const/routing.const';
+import { FORMKEYS } from './../const/FORMKEYS.const';
+import { ROUTING } from './../const/routing.const';
 import { RecordSettingModalComponent } from './record-setting-modal/record-setting-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
@@ -16,14 +16,14 @@ import { Router } from '@angular/router';
 export class WorkoutRecordComponent implements OnInit {
   displayList = [
     {
-      [formkeys.date]: '2021/03/21 16:00', [formkeys.title]: '今天練胸日', detail: [{ name: '槓鈴臥推', [formkeys.sets]: 5, volume: '2000' },
-      { name: '啞鈴臥推', [formkeys.sets]: 5, volume: '2000' },
-      { name: '飛鳥夾胸', [formkeys.sets]: 5, volume: '2000' }]
+      [FORMKEYS.date]: '2021/03/21 16:00', [FORMKEYS.title]: '今天練胸日', detail: [{ name: '槓鈴臥推', [FORMKEYS.sets]: 5, volume: '2000' },
+      { name: '啞鈴臥推', [FORMKEYS.sets]: 5, volume: '2000' },
+      { name: '飛鳥夾胸', [FORMKEYS.sets]: 5, volume: '2000' }]
     },
     {
-      date: '2021/03/21 16:00', title: '想練腿', detail: [{ name: '槓鈴深蹲', [formkeys.sets]: 5, volume: '2000' },
-      { name: '箭步蹲', [formkeys.sets]: 5, volume: '200' },
-      { name: '硬舉Ｆ', [formkeys.sets]: 5, volume: '2000' }]
+      date: '2021/03/21 16:00', title: '想練腿', detail: [{ name: '槓鈴深蹲', [FORMKEYS.sets]: 5, volume: '2000' },
+      { name: '箭步蹲', [FORMKEYS.sets]: 5, volume: '200' },
+      { name: '硬舉Ｆ', [FORMKEYS.sets]: 5, volume: '2000' }]
     }
 
   ];
@@ -55,6 +55,6 @@ export class WorkoutRecordComponent implements OnInit {
    * 新增訓練內容
    */
   onCheckDetail() {
-    this.router.navigate([`${Routing.Record}/${Routing.Movement}`]);
+    this.router.navigate([`${ROUTING.RECORD}/${ROUTING.MOVEMENT}`]);
   }
 }

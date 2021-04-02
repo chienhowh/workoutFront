@@ -1,4 +1,4 @@
-import { Routing } from './../const/routing.const';
+import { ROUTING } from './../const/routing.const';
 import { MovementTypeComponent } from './movement-type/movement-type.component';
 import { MovementRecordComponent } from './movement-record/movement-record.component';
 
@@ -7,10 +7,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { WorkoutRecordComponent } from './workout-record.component';
 
 const routes: Routes = [
+  { path: ROUTING.MOVEMENT, component: MovementTypeComponent },
+  { path: ROUTING.MOVEMENT_DETAIL, component: MovementRecordComponent },
   { path: '', component: WorkoutRecordComponent },
-  { path: Routing.Movement, component: MovementTypeComponent },
-  { path: Routing.MovementDetail, component: MovementRecordComponent }
-
 ];
 
 @NgModule({

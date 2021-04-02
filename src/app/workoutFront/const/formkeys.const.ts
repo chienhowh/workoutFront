@@ -1,4 +1,4 @@
-export const formkeys = {
+export const FORMKEYS = {
   /**
    * 日期
    */

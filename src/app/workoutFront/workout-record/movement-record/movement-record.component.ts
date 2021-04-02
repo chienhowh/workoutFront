@@ -14,6 +14,7 @@ export class MovementRecordComponent implements OnInit {
    */
   @Input() movement: MovementType;
   movementInfoList: MovementInfo[] = [];
+  panelOpen = false;
   /**
    * 編輯紀錄的重量
    */
@@ -41,13 +42,17 @@ export class MovementRecordComponent implements OnInit {
       if (res) {
         this.movementInfoList.push(res);
         this.previousInfo = { ...res };
+        this.panelOpen = true;
         console.log(this.movementInfoList);
       }
 
     });
   }
 
-  createSameMovementInfo() {
+  /**
+   * 直接新增同樣重量，不用重新設定
+   */
+  addSameSets() {
     // 還沒設定重量
     if (!this.previousInfo) { return this.createMovementInfo(); }
     this.movementInfoList.push(this.previousInfo);

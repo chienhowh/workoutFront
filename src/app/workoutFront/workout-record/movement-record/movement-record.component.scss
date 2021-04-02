@@ -1,2 +1,13 @@
 @import '../../../shared/scss/base-card.scss';
+@import '../../../shared/scss/theme-variables.scss';
 
+.ant-collapse-content-box{
+  padding-bottom: 30px;
+}
+
+.add-sets{
+color:$color-primary;
+font-size: 16px;
+position: absolute;
+right: 8px;
+}

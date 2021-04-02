@@ -5,7 +5,7 @@
       <nz-form-item>
         <nz-form-label> 部位: </nz-form-label>
         <nz-form-control>
-          <nz-select [formControlName]="formkeys.part" (ngModelChange)="partChange($event)">
+          <nz-select [formControlName]="FORMKEYS.part" (ngModelChange)="partChange($event)">
             <nz-option *ngFor="let part of partData" [nzValue]="part" [nzLabel]="part"></nz-option>
           </nz-select>
         </nz-form-control>
@@ -13,7 +13,7 @@
       <nz-form-item>
         <nz-form-label> 動作: </nz-form-label>
         <nz-form-control>
-          <nz-select [formControlName]="formkeys.movement">
+          <nz-select [formControlName]="FORMKEYS.movement">
             <nz-option *ngFor="let movement of movementData[selectedPart]" [nzValue]="movement" [nzLabel]="movement"></nz-option>
           </nz-select>
         </nz-form-control>

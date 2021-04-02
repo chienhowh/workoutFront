@@ -1,5 +1,5 @@
 <nz-collapse class="m-2">
-  <nz-collapse-panel [nzHeader]="header" [nzExtra]="extraTpl">
+  <nz-collapse-panel [nzHeader]="header" [nzActive]="panelOpen" [nzExtra]="extraTpl" >
     <!-- Header -->
     <ng-template #header>
       <div class="header">{{movement.movement}}</div>
@@ -13,15 +13,17 @@
       <div class="row">
           <div class="col-6">重量:{{ info.weight }}</div>
           <div class="col-6">次數:{{ info.reps }}</div>
-
       </div>
     </div>
+     <!-- 運動細節 End -->
     <div>
       <i
         nz-icon
         nzType="plus-circle"
         nzTheme="fill"
-        (click)="createSameMovementInfo()"
+        class="add-sets"
+        *ngIf="panelOpen"
+        (click)="addSameSets()"
       ></i>
     </div>
   </nz-collapse-panel>

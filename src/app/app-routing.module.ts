@@ -1,15 +1,15 @@
-import { Routing } from './workoutFront/const/routing.const';
-import { WorkoutRecordComponent } from './workoutFront/workout-record/workout-record.component';
+import { ROUTING } from './workoutFront/const/routing.const';
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: Routing.Record,
+    path: ROUTING.RECORD,
     loadChildren: () => import('./workoutFront/workout-record/workout-record.module').then(m => m.WorkoutRecordModule)
   },
-  { path: 'aesthtic', loadChildren: () => import('./aesthtic/aesthtic.module').then(m => m.AesthticModule) },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: ROUTING.AESTHETIC, loadChildren: () => import('./workoutFront/aesthetic/aesthetic.module').then(m => m.AestheticModule) },
+  { path: '', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
